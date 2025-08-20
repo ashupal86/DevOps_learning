@@ -39,6 +39,9 @@ function App() {
           </li>
         ))}
       </ul>
+      <div className="footer">
+        <p>Total Todos: {todos.length}</p>
+        </div>
     </div>
   );
 }
