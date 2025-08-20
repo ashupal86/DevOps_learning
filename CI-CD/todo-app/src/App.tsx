@@ -41,6 +41,7 @@ function App() {
       </ul>
       <div className="footer">
         <p>Total Todos: {todos.length}</p>
+        <p>Made with love</p>
         </div>
     </div>
   );
