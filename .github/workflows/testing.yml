@@ -1,0 +1,26 @@
+name: Unit Tests
+
+on:
+    push:
+        branches:
+            - testing
+            - main
+    pull_request:
+        branches:
+            - testing
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        container:
+            image: python:3.12
+        
+        defaults:
+            run:
+                working-directory: ci-cd-testing/
+        
+        steps:
+        - uses: actions/checkout@v2
+        - run : pip install -r requirements.txt
+        - run : pytest
