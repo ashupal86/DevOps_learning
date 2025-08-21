@@ -13,7 +13,7 @@ jobs:
         
         defaults:
             run:
-                working-directory: CI-CD/ci-cd-testing
+                working-directory: ci-cd-testing/
         
         steps:
         - uses: actions/checkout@v2
