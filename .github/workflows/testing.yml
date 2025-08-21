@@ -1,0 +1,22 @@
+name: Unit Tests
+
+on:
+    push:
+        branches:
+            - testing
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        container:
+            image: python:3.12
+        
+        defaults:
+            run:
+                working-directory: CI-CD/ci-cd-testing
+        
+        steps:
+        - uses: actions/checkout@v2
+        - run : npm ci
+        - run : npm test
+        - run : npm run build
