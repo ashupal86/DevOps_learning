@@ -18,13 +18,11 @@ services:
     container_name: mlflow_server
     depends_on:
      - postgres
-    environment:
-      BACKEND_STORE_URI: postgresql://mlflow:mlflow@postgres/mlflow_db
-      ARTIFACT_ROOT: /mlflow/artifacts
     ports:
       - "8080:8080"
     volumes:
-      - ./mlrun:/mlflow/artifacts
+      - mlflow_artifacts:/app/mlflow/artifacts
       
 volumes:
   postgres_data:
+  mlflow_artifacts:

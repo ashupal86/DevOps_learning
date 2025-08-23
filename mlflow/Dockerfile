@@ -1,7 +1,9 @@
 # Dockerfile
 FROM python:3.12
 
-WORKDIR /mlflow
+WORKDIR /app
+
+
 
 RUN pip install --no-cache-dir psycopg2-binary mlflow
 
