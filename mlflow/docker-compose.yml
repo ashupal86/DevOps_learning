@@ -22,6 +22,7 @@ services:
       - "8080:8080"
     volumes:
       - mlflow_artifacts:/app/mlflow/artifacts
+    user: "1000:1000"
       
 volumes:
   postgres_data:
