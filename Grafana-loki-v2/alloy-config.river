@@ -1,0 +1,27 @@
+logging {
+  level = "info"
+}
+
+// Source: read from the test.log file and send to processing
+loki.source.file "myapp_api" {
+  targets = [
+    {
+      __path__ = "/var/log/myapp.log",
+      job      = "fastapi",     // custom label
+      host     = "uvicorn-server",     // custom label
+    },
+  ]
+  forward_to = [loki.process.ship_logs.receiver]
+}
+
+// Optional processing stage (can add filters, parsing, etc.)
+loki.process "ship_logs" {
+  forward_to = [loki.write.default.receiver]
+}
+
+// Sender: push logs to Loki endpoint
+loki.write "default" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}
