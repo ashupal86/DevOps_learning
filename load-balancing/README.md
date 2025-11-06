@@ -7,4 +7,5 @@ tested with 3 replica of app and each has 4 workers whcih is equal to **( 4 (wor
 ### TEST with hey tool
 > Total Requests 10,000 and 500 conncurrent client requesting our applicaiton on localhost:80 **http**
 #### Results :
+> delay of 1sec is due to app sleep(1) second.
 !["result of hey for haproxy"](image.png)
