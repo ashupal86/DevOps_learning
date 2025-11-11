@@ -1,2 +1,7 @@
 .teraform/teraform/
 teraform/.terraform
+
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
