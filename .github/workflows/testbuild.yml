@@ -36,6 +36,9 @@ jobs:
   build:
     needs: test   # ✅ Only runs if tests pass
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: test-pass-build
 
     steps:
       - name: Checkout repository
